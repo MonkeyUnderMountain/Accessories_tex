@@ -1,0 +1,107 @@
+% packages_pdflatex.tex
+
+
+%--------------------------------------------------------------------------
+% 核心包加载（适用于 pdflatex）
+%--------------------------------------------------------------------------
+% 基础功能包
+\usepackage{graphicx}                             % 图形插入支持
+\usepackage{longtable}                            % 长表格支持
+\usepackage{amsmath,amsthm,amssymb,amsfonts}      % 数学符号和字体支持
+\usepackage{thmtools}                             % 高级定理工具包（提供declaretheorem）
+\usepackage[dvipsnames]{xcolor}                   % 颜色支持
+\usepackage{tikz}                                 % 矢量绘图
+\usepackage{pstricks-add}                         % PSTricks扩展
+\usepackage{tikz-cd}                              % 交换图绘制
+\usepackage[all]{xy}                              % 交换图绘制
+\usepackage{mathtools}                            % 数学工具包（提供多种数学环境和命令）
+
+% 页面设置和布局
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  top=2.5cm,
+  bottom=2.5cm,
+  left=2.5cm,
+  right=2.5cm,
+}
+\renewcommand{\baselinestretch}{1.3}
+
+% 交互功能
+\usepackage[
+  colorlinks,
+  linkcolor=blue,
+  urlcolor=magenta,
+  citecolor=cyan
+]{hyperref}       % 超链接支持
+\usepackage[nameinlink]{cleveref} % 智能引用（自动添加前缀）
+
+% 列表环境标号配置
+\usepackage{enumitem}       % Required for custom labels
+\setlist[enumerate,1]{label=(\alph*)} % 第一层级：小写字母加括号 (a), (b), ...)
+\setlist[enumerate,2]{label=(\roman*)} % 第二层级：小写罗马数字加括号 (i), (ii), ...)
+
+%--------------------------------------------------------------------------
+% 定理环境可视化配置
+%--------------------------------------------------------------------------
+% 定义具体定理环境（共享计数器）
+\theoremstyle{definition}
+  \newtheorem{definition}{Definition}[section]
+  \declaretheorem[sibling=definition,name=Proposition]{proposition}
+  \declaretheorem[sibling=definition,name=Theorem]{theorem}
+  \declaretheorem[sibling=definition,name=Lemma]{lemma}
+  \declaretheorem[sibling=definition,name=Corollary]{corollary}
+  \declaretheorem[sibling=definition,name=Conjecture]{conjecture}
+  \declaretheorem[sibling=definition,name=Question]{question}
+  \declaretheorem[sibling=definition,name=Claim]{claim}
+\theoremstyle{remark}
+  \declaretheorem[sibling=definition,name=Remark]{remark}
+  \declaretheorem[sibling=definition,name=Example]{example}
+
+% 定义step子环境（在proof环境中使用，每个proof重置计数器）
+\newcounter{step}
+\newcounter{globalstep} % Global unique step counter for anchors
+\newenvironment{step}[1][]{%
+  \refstepcounter{step}%
+  \refstepcounter{globalstep}% This creates unique anchors
+  \par\smallskip%
+  \noindent\textbf{Step \thestep\if\relax\detokenize{#1}\relax\else\ (#1)\fi.}\ %
+}{%
+  \par\smallskip%
+}
+\renewcommand{\theglobalstep}{\arabic{step}}
+
+% 定义case子环境（在proof环境中使用，每个proof重置计数器）
+\newcounter{case}
+\newcounter{globalcase} % Global unique case counter for anchors
+\newenvironment{case}[1][]{%
+  \refstepcounter{case}%
+  \refstepcounter{globalcase}% This creates unique anchors
+  \par\smallskip%
+  \noindent\textbf{Case \thecase\if\relax\detokenize{#1}\relax\else\ (#1)\fi.}\ %
+}{%
+  \par\smallskip%
+}
+\renewcommand{\theglobalcase}{\arabic{case}}
+
+\AtBeginEnvironment{proof}{%
+  \setcounter{case}{0}%
+  \setcounter{step}{0}%
+}
+
+% 设置cleveref引用格式
+\crefname{definition}{Definition}{Definitions}
+\crefname{proposition}{Proposition}{Propositions}
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{corollary}{Corollary}{Corollaries}
+\crefname{conjecture}{Conjecture}{Conjectures}
+\crefname{question}{Question}{Questions}
+\crefname{remark}{Remark}{Remarks}
+\crefname{example}{Example}{Examples}
+\crefname{proof}{Proof}{Proofs}
+\crefname{claim}{Claim}{Claims}
+\crefname{globalstep}{Step}{Steps} % Global unique step counter
+\crefname{globalcase}{Case}{Cases} % Global unique case counter
+\crefname{section}{Section}{Sections}
+\crefname{subsection}{Subsection}{Subsections}
