@@ -1,5 +1,9 @@
 % need \usepackage{unicode-math} in preamble
 
+% Customize operator font 
+\newcommand{\upoperatorname}[1]{\mathop{\symup{#1}}\nolimits}
+% \newcommand{\bfoperatorname}[1]{\mathop{\symbf{#1}}\nolimits}
+
 %一些常用的宏定义
 \newcommand{\kk}{{\symbf{k}}}
 \newcommand{\kkk}{{\mathbb{k}}}
@@ -29,11 +33,11 @@
 \newcommand{\Open}{\symbf{Open}}
 \newcommand{\Cat}{\symbf{Cat}}
 \newcommand{\AlgSp}{\symbf{AlgSp}}
-\newcommand{\Obj}{\operatorname{Obj}}
-\newcommand{\Fun}{\operatorname{Fun}}
+\newcommand{\Obj}{\upoperatorname{Obj}}
+\newcommand{\Fun}{\upoperatorname{Fun}}
 \newcommand{\op}{\mathrm{op}}
 
-\newcommand{\res}{\operatorname{res}}
+\newcommand{\res}{\upoperatorname{res}}
 
 \newcommand{\ten}{\otimes}
 \newcommand{\ratmap}{\dashrightarrow}
@@ -43,90 +47,90 @@
 \newcommand{\invlim}{\varprojlim}
 \newcommand{\dirlim}{\varinjlim}
 
-\newcommand{\id}{{\operatorname{id}}}
+\newcommand{\id}{{\upoperatorname{id}}}
 
 \newcommand{\sing}{{\mathrm{sing}}}
 \newcommand{\et}{{\mathrm{\acute{e}t}}}
 
-\newcommand{\Frac}{\operatorname{Frac}}
-\newcommand{\Der}{\operatorname{Der}}
-\newcommand{\Spec}{\operatorname{Spec}}
-\newcommand{\Proj}{\operatorname{Proj}}
-\newcommand{\mSpec}{\operatorname{mSpec}}
-\newcommand{\depth}{\operatorname{depth}}
-\newcommand{\idealht}{\operatorname{ht}}
-\newcommand{\codim}{\operatorname{codim}}
-\newcommand{\Supp}{\operatorname{Supp}}
-\newcommand{\trdeg}{\operatorname{trdeg}}
-\newcommand{\Ass}{\operatorname{Ass}}
-\newcommand{\Ann}{\operatorname{Ann}}
-\newcommand{\Ext}{\operatorname{Ext}}
-\newcommand{\Tor}{\operatorname{Tor}}
-\newcommand{\Hom}{\operatorname{Hom}}
-\newcommand{\Eq}{\operatorname{Eq}}
-\newcommand{\Aut}{\operatorname{Aut}}
-\newcommand{\End}{\operatorname{End}}
-\newcommand{\Sym}{\operatorname{Sym}}
-\newcommand{\Mor}{\operatorname{Mor}}
-\newcommand{\Mult}{\operatorname{Mult}}
-\newcommand{\Image}{\operatorname{Im}}
-\newcommand{\Ker}{\operatorname{Ker}}
-\newcommand{\coker}{\operatorname{coker}}
-\newcommand{\ord}{\operatorname{ord}}
-\newcommand{\rank}{\operatorname{rank}}
-\newcommand{\cohdim}{\operatorname{coh.dim}}
-\newcommand{\hldim}{\operatorname{hl.dim}}
-\newcommand{\projdim}{\operatorname{proj.dim}}
-\newcommand{\injdim}{\operatorname{inj.dim}}
-\newcommand{\rad}{\operatorname{rad}}
-\newcommand{\nil}{\operatorname{nil}}
-\newcommand{\characteristic}{\operatorname{char}}
-\newcommand{\Pic}{\operatorname{Pic}}
-\newcommand{\NS}{\operatorname{NS}}
-\newcommand{\Exc}{\operatorname{Exc}}
-\newcommand{\Sing}{\operatorname{Sing}}
-\newcommand{\Bl}{\operatorname{Bl}}
-\newcommand{\Reg}{\operatorname{Reg}}
-\newcommand{\Tr}{\operatorname{Tr}}
-\newcommand{\Psef}{\operatorname{Psef}}
-\newcommand{\Nef}{\operatorname{Nef}}
-\newcommand{\Amp}{\operatorname{Amp}}
-\newcommand{\Bigcone}{\operatorname{Big}}
-\newcommand{\Frob}{\operatorname{Frob}}
-\newcommand{\Bs}{\operatorname{Bs}}
-\newcommand{\Stab}{\operatorname{Stab}}
-\newcommand{\Cone}{\operatorname{Cone}}
-\newcommand{\Div}{\operatorname{Div}}
-\newcommand{\WDiv}{\operatorname{WDiv}}
-\newcommand{\CaDiv}{\operatorname{CaDiv}}
+\newcommand{\Frac}{\upoperatorname{Frac}}
+\newcommand{\Der}{\upoperatorname{Der}}
+\newcommand{\Spec}{\upoperatorname{Spec}}
+\newcommand{\Proj}{\upoperatorname{Proj}}
+\newcommand{\mSpec}{\upoperatorname{mSpec}}
+\newcommand{\depth}{\upoperatorname{depth}}
+\newcommand{\idealht}{\upoperatorname{ht}}
+\newcommand{\codim}{\upoperatorname{codim}}
+\newcommand{\Supp}{\upoperatorname{Supp}}
+\newcommand{\trdeg}{\upoperatorname{trdeg}}
+\newcommand{\Ass}{\upoperatorname{Ass}}
+\newcommand{\Ann}{\upoperatorname{Ann}}
+\newcommand{\Ext}{\upoperatorname{Ext}}
+\newcommand{\Tor}{\upoperatorname{Tor}}
+\newcommand{\Hom}{\upoperatorname{Hom}}
+\newcommand{\Eq}{\upoperatorname{Eq}}
+\newcommand{\Aut}{\upoperatorname{Aut}}
+\newcommand{\End}{\upoperatorname{End}}
+\newcommand{\Sym}{\upoperatorname{Sym}}
+\newcommand{\Mor}{\upoperatorname{Mor}}
+\newcommand{\Mult}{\upoperatorname{Mult}}
+\newcommand{\Image}{\upoperatorname{Im}}
+\newcommand{\Ker}{\upoperatorname{Ker}}
+\newcommand{\coker}{\upoperatorname{coker}}
+\newcommand{\ord}{\upoperatorname{ord}}
+\newcommand{\rank}{\upoperatorname{rank}}
+\newcommand{\cohdim}{\upoperatorname{coh.dim}}
+\newcommand{\hldim}{\upoperatorname{hl.dim}}
+\newcommand{\projdim}{\upoperatorname{proj.dim}}
+\newcommand{\injdim}{\upoperatorname{inj.dim}}
+\newcommand{\rad}{\upoperatorname{rad}}
+\newcommand{\nil}{\upoperatorname{nil}}
+\newcommand{\characteristic}{\upoperatorname{char}}
+\newcommand{\Pic}{\upoperatorname{Pic}}
+\newcommand{\NS}{\upoperatorname{NS}}
+\newcommand{\Exc}{\upoperatorname{Exc}}
+\newcommand{\Sing}{\upoperatorname{Sing}}
+\newcommand{\Bl}{\upoperatorname{Bl}}
+\newcommand{\Reg}{\upoperatorname{Reg}}
+\newcommand{\Tr}{\upoperatorname{Tr}}
+\newcommand{\Psef}{\upoperatorname{Psef}}
+\newcommand{\Nef}{\upoperatorname{Nef}}
+\newcommand{\Amp}{\upoperatorname{Amp}}
+\newcommand{\Bigcone}{\upoperatorname{Big}}
+\newcommand{\Frob}{\upoperatorname{Frob}}
+\newcommand{\Bs}{\upoperatorname{Bs}}
+\newcommand{\Stab}{\upoperatorname{Stab}}
+\newcommand{\Cone}{\upoperatorname{Cone}}
+\newcommand{\Div}{\upoperatorname{Div}}
+\newcommand{\WDiv}{\upoperatorname{WDiv}}
+\newcommand{\CaDiv}{\upoperatorname{CaDiv}}
 
-\newcommand{\GL}{\operatorname{GL}}
-\newcommand{\PGL}{\operatorname{PGL}}
-\newcommand{\SL}{\operatorname{SL}}
-\newcommand{\PSL}{\operatorname{PSL}}
-\newcommand{\SO}{\operatorname{SO}}
-\newcommand{\Spin}{\operatorname{Spin}}
-\newcommand{\Sp}{\operatorname{Sp}}
-\newcommand{\SU}{\operatorname{SU}}
+\newcommand{\GL}{\upoperatorname{GL}}
+\newcommand{\PGL}{\upoperatorname{PGL}}
+\newcommand{\SL}{\upoperatorname{SL}}
+\newcommand{\PSL}{\upoperatorname{PSL}}
+\newcommand{\SO}{\upoperatorname{SO}}
+\newcommand{\Spin}{\upoperatorname{Spin}}
+\newcommand{\Sp}{\upoperatorname{Sp}}
+\newcommand{\SU}{\upoperatorname{SU}}
 
 \newcommand{\gl}{{\mathfrak{gl}}}
 \newcommand{\so}{{\mathfrak{so}}}
 \newcommand{\su}{{\mathfrak{su}}}
 
-\newcommand{\ad}{\operatorname{ad}}
-\newcommand{\Ad}{\operatorname{Ad}}
-\newcommand{\Lie}{\operatorname{Lie}}
-\newcommand{\diag}{\operatorname{diag}}
-% \newcommand{\span}{\operatorname{span}}
+\newcommand{\ad}{\upoperatorname{ad}}
+\newcommand{\Ad}{\upoperatorname{Ad}}
+\newcommand{\Lie}{\upoperatorname{Lie}}
+\newcommand{\diag}{\upoperatorname{diag}}
+% \newcommand{\span}{\upoperatorname{span}}
 
-\newcommand{\vol}{\operatorname{vol}}
-\newcommand{\Length}{\operatorname{Length}}
+\newcommand{\vol}{\upoperatorname{vol}}
+\newcommand{\Length}{\upoperatorname{Length}}
 
-\newcommand{\disc}{\operatorname{disc}}
+\newcommand{\disc}{\upoperatorname{disc}}
 
-\newcommand{\gr}{\operatorname{gr}}
+\newcommand{\gr}{\upoperatorname{gr}}
 
-\newcommand{\Quot}{\operatorname{Quot}}
+\newcommand{\Quot}{\upoperatorname{Quot}}
 
 
 \newcommand{\calHom}{{\mathcal{H\!o\!m}}}
