@@ -5,7 +5,9 @@
 \newcommand{\caloperatorname}[1]{\mathop{\mathcal{#1}}\nolimits}
 % \newcommand{\bfoperatorname}[1]{\mathop{\symbf{#1}}\nolimits}
 
-%一些常用的宏定义
+
+
+% general functions and symbols
 \newcommand{\kk}{{\symbf{k}}}
 \newcommand{\kkk}{{\mathbb{k}}}
 \newcommand{\KK}{{\symbf{K}}}
@@ -13,14 +15,49 @@
 \newcommand{\rkk}{{\kappa}} % residue field
 \newcommand{\fkk}{{\mathscr{K}}} % fraction field
 
-\renewcommand{\d}{{\symrm{d}}}
-
-\renewcommand{\i}{{\symrm{i}}}
 \newcommand{\im}{\sqrt{-1}} % imaginary unit
-\renewcommand{\P}{\partial}
+
+\newcommand{\ten}{\otimes}
+
+\newcommand{\injmap}{\hookrightarrow}
+\newcommand{\surjmap}{\twoheadrightarrow}
+
+\newcommand{\invlim}{\varprojlim}
+\newcommand{\dirlim}{\varinjlim}
+
+\newcommand{\id}{{\upoperatorname{id}}}
+
+\newcommand{\vol}{\upoperatorname{vol}}
+\newcommand{\Length}{\upoperatorname{Length}}
+
+\newcommand{\disc}{\upoperatorname{disc}}
+
+\newcommand{\gr}{\upoperatorname{gr}}
+
+\newcommand{\Frob}{\upoperatorname{Frob}}
 
 
-% for category theory
+% for algebraic geometry
+\newcommand{\Spec}{\upoperatorname{Spec}}
+\newcommand{\Proj}{\upoperatorname{Proj}}
+\newcommand{\mSpec}{\upoperatorname{mSpec}}
+
+\newcommand{\calQuot}{\caloperatorname{Quot}}
+\newcommand{\Quot}{\upoperatorname{Quot}}
+\newcommand{\calHilb}{\caloperatorname{Hilb}}
+\newcommand{\Hilb}{\upoperatorname{Hilb}}
+
+\newcommand{\calHom}{\caloperatorname{Hom}}
+\newcommand{\calExt}{\caloperatorname{Ext}}
+\newcommand{\calProj}{\caloperatorname{Proj}}
+\newcommand{\calSpec}{\caloperatorname{Spec}}
+
+\newcommand{\sing}{{\mathrm{sing}}}
+\newcommand{\et}{{\mathrm{\acute{e}t}}}
+
+
+
+% for category theory and homological algebra
 \newcommand{\Set}{\symbf{Set}}
 \newcommand{\Var}{\symbf{Var}}
 \newcommand{\Sch}{\symbf{Sch}}
@@ -34,30 +71,28 @@
 \newcommand{\Open}{\symbf{Open}}
 \newcommand{\Cat}{\symbf{Cat}}
 \newcommand{\AlgSp}{\symbf{AlgSp}}
+
 \newcommand{\Obj}{\upoperatorname{Obj}}
 \newcommand{\Fun}{\upoperatorname{Fun}}
+\newcommand{\Mor}{\upoperatorname{Mor}}
+
 \newcommand{\op}{\mathrm{op}}
 
 \newcommand{\res}{\upoperatorname{res}}
 
-\newcommand{\ten}{\otimes}
-\newcommand{\ratmap}{\dashrightarrow}
-\newcommand{\injmap}{\hookrightarrow}
-\newcommand{\surjmap}{\twoheadrightarrow}
+\newcommand{\Ext}{\upoperatorname{Ext}}
+\newcommand{\Tor}{\upoperatorname{Tor}}
+\newcommand{\Hom}{\upoperatorname{Hom}}
+\newcommand{\Eq}{\upoperatorname{Eq}}
 
-\newcommand{\invlim}{\varprojlim}
-\newcommand{\dirlim}{\varinjlim}
+\newcommand{\cohdim}{\upoperatorname{coh.dim}}
+\newcommand{\hldim}{\upoperatorname{hl.dim}}
+\newcommand{\projdim}{\upoperatorname{proj.dim}}
+\newcommand{\injdim}{\upoperatorname{inj.dim}}
 
-\newcommand{\id}{{\upoperatorname{id}}}
 
-\newcommand{\sing}{{\mathrm{sing}}}
-\newcommand{\et}{{\mathrm{\acute{e}t}}}
 
-\newcommand{\Frac}{\upoperatorname{Frac}}
-\newcommand{\Der}{\upoperatorname{Der}}
-\newcommand{\Spec}{\upoperatorname{Spec}}
-\newcommand{\Proj}{\upoperatorname{Proj}}
-\newcommand{\mSpec}{\upoperatorname{mSpec}}
+% for commutative algebra
 \newcommand{\depth}{\upoperatorname{depth}}
 \newcommand{\idealht}{\upoperatorname{ht}}
 \newcommand{\codim}{\upoperatorname{codim}}
@@ -65,47 +100,40 @@
 \newcommand{\trdeg}{\upoperatorname{trdeg}}
 \newcommand{\Ass}{\upoperatorname{Ass}}
 \newcommand{\Ann}{\upoperatorname{Ann}}
-\newcommand{\Ext}{\upoperatorname{Ext}}
-\newcommand{\Tor}{\upoperatorname{Tor}}
-\newcommand{\Hom}{\upoperatorname{Hom}}
-\newcommand{\Eq}{\upoperatorname{Eq}}
-\newcommand{\Aut}{\upoperatorname{Aut}}
-\newcommand{\End}{\upoperatorname{End}}
-\newcommand{\Sym}{\upoperatorname{Sym}}
-\newcommand{\Mor}{\upoperatorname{Mor}}
+\newcommand{\Der}{\upoperatorname{Der}}
+
+\newcommand{\Frac}{\upoperatorname{Frac}}
+
 \newcommand{\Mult}{\upoperatorname{Mult}}
-\newcommand{\Image}{\upoperatorname{Im}}
-\newcommand{\Ker}{\upoperatorname{Ker}}
-\newcommand{\coker}{\upoperatorname{coker}}
-\newcommand{\ord}{\upoperatorname{ord}}
-\newcommand{\rank}{\upoperatorname{rank}}
-\renewcommand{\deg}{\upoperatorname{deg}}
-\newcommand{\cohdim}{\upoperatorname{coh.dim}}
-\newcommand{\hldim}{\upoperatorname{hl.dim}}
-\newcommand{\projdim}{\upoperatorname{proj.dim}}
-\newcommand{\injdim}{\upoperatorname{inj.dim}}
+
 \newcommand{\rad}{\upoperatorname{rad}}
 \newcommand{\nil}{\upoperatorname{nil}}
 \newcommand{\characteristic}{\upoperatorname{char}}
+
+
+
+% for birational geometry
 \newcommand{\Pic}{\upoperatorname{Pic}}
 \newcommand{\NS}{\upoperatorname{NS}}
 \newcommand{\Exc}{\upoperatorname{Exc}}
 \newcommand{\Sing}{\upoperatorname{Sing}}
 \newcommand{\Bl}{\upoperatorname{Bl}}
 \newcommand{\Reg}{\upoperatorname{Reg}}
-\newcommand{\Tr}{\upoperatorname{Tr}}
 \newcommand{\Psef}{\upoperatorname{Psef}}
 \newcommand{\Nef}{\upoperatorname{Nef}}
 \newcommand{\Amp}{\upoperatorname{Amp}}
 \newcommand{\Bigcone}{\upoperatorname{Big}}
-\newcommand{\Frob}{\upoperatorname{Frob}}
 \newcommand{\Bs}{\upoperatorname{Bs}}
 \newcommand{\Stab}{\upoperatorname{Stab}}
 \newcommand{\Cone}{\upoperatorname{Cone}}
 \newcommand{\Div}{\upoperatorname{Div}}
 \newcommand{\WDiv}{\upoperatorname{WDiv}}
 \newcommand{\CaDiv}{\upoperatorname{CaDiv}}
+\newcommand{\ratmap}{\dashrightarrow}
 
+
+
+% for Lie groups, Lie algebras and linear algebra
 \newcommand{\GL}{\upoperatorname{GL}}
 \newcommand{\PGL}{\upoperatorname{PGL}}
 \newcommand{\SL}{\upoperatorname{SL}}
@@ -125,37 +153,24 @@
 \newcommand{\diag}{\upoperatorname{diag}}
 % \newcommand{\span}{\upoperatorname{span}}
 
-\newcommand{\vol}{\upoperatorname{vol}}
-\newcommand{\Length}{\upoperatorname{Length}}
+\newcommand{\Image}{\upoperatorname{Im}}
+\renewcommand{\Im}{\upoperatorname{Im}}
+\newcommand{\Ker}{\upoperatorname{Ker}}
+\newcommand{\coker}{\upoperatorname{coker}}
+\newcommand{\ord}{\upoperatorname{ord}}
+\newcommand{\rank}{\upoperatorname{rank}}
+\renewcommand{\deg}{\upoperatorname{deg}}
+\renewcommand{\det}{\upoperatorname{det}}
+\renewcommand{\tr}{\upoperatorname{tr}}
+\newcommand{\Tr}{\upoperatorname{Tr}}
 
-\newcommand{\disc}{\upoperatorname{disc}}
-
-\newcommand{\gr}{\upoperatorname{gr}}
-
-\newcommand{\calQuot}{\caloperatorname{Quot}}
-\newcommand{\Quot}{\upoperatorname{Quot}}
-\newcommand{\calHilb}{\caloperatorname{Hilb}}
-\newcommand{\Hilb}{\upoperatorname{Hilb}}
-
-
-\newcommand{\calHom}{\caloperatorname{Hom}}
-\newcommand{\calExt}{\caloperatorname{Ext}}
-\newcommand{\calProj}{\caloperatorname{Proj}}
-\newcommand{\calSpec}{\caloperatorname{Spec}}
+\newcommand{\Aut}{\upoperatorname{Aut}}
+\newcommand{\End}{\upoperatorname{End}}
+\newcommand{\Sym}{\upoperatorname{Sym}}
 
 
-\newcommand{\mat}[4]{\left[ \begin{array}{cc}#1 &#2 \\ #3 &#4\end{array}\right]}
-\newcommand{\threemat}[9]{\left[ \begin{array}{ccc}
-  #1 & #2 & #3 \\
-  #4 & #5 & #6 \\
-  #7 & #8 & #9
-\end{array}\right]}
-\newcommand{\genmat}[9]{\left( \begin{array}{cccc}
-  #1 & #2 & \cdots & #3 \\
-  #4 & #5 & \cdots & #6 \\  
-  \ldots & \ldots & \ddots & \ldots \\
-  #7 & #8 & \cdots & #9
-\end{array}\right)}
+
+
 
 
 
