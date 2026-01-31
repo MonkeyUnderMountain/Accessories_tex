@@ -5,6 +5,8 @@
 \newcommand{\caloperatorname}[1]{\mathop{\mathcal{#1}}\nolimits}
 \newcommand{\frakoperatorname}[1]{\mathop{\mathfrak{#1}}\nolimits}
 % \newcommand{\bfoperatorname}[1]{\mathop{\symbf{#1}}\nolimits}
+\newcommand{\uplimoperatorname}[1]{\mathop{\symup{#1}}\displaylimits}
+% limits, nolimits, and displaylimits are used to control the position of subscript and superscript
 
 
 
@@ -26,6 +28,15 @@
 
 \newcommand{\invlim}{\varprojlim}
 \newcommand{\dirlim}{\varinjlim}
+
+\renewcommand{\lim}{\uplimoperatorname{lim}}
+\newcommand{\colim}{\uplimoperatorname{colim}}
+\renewcommand{\limsup}{\uplimoperatorname{lim\,sup}}
+\renewcommand{\liminf}{\uplimoperatorname{lim\,inf}}
+\renewcommand{\max}{\uplimoperatorname{max}}
+\renewcommand{\min}{\uplimoperatorname{min}}
+\renewcommand{\sup}{\uplimoperatorname{sup}}
+\renewcommand{\inf}{\uplimoperatorname{inf}}
 
 \newcommand{\id}{{\upoperatorname{id}}}
 
@@ -233,15 +244,14 @@
 
 
 % Arakelov geometry
-\newcommand{\adeg}{\widehat{\deg}}
-\newcommand{\achern}{\widehat{c}}
-\newcommand{\aPic}{\widehat{\Pic}}
-\newcommand{\aDiv}{\widehat{\Div}}
-\newcommand{\adiv}{\widehat{\divisor}}
-\newcommand{\aCaDiv}{\widehat{\CaDiv}}
-\newcommand{\aWDiv}{\widehat{\WDiv}}
-\newcommand{\aCl}{\widehat{\Cl}}
-\newcommand{\aCaCl}{\widehat{\CaCl}}
+\newcommand{\adeg}{\upoperatorname{\widehat{deg}}}
+\newcommand{\aPic}{\upoperatorname{\widehat{Pic}}}
+\newcommand{\aDiv}{\upoperatorname{\widehat{Div}}}
+\newcommand{\adiv}{\upoperatorname{\widehat{divisor}}}
+\newcommand{\aCaDiv}{\upoperatorname{\widehat{CaDiv}}}
+\newcommand{\aWDiv}{\upoperatorname{\widehat{WDiv}}}
+\newcommand{\aCl}{\upoperatorname{\widehat{Cl}}}
+\newcommand{\aCaCl}{\upoperatorname{\widehat{CaCl}}}
 
 
 
