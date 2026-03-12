@@ -142,4 +142,15 @@ Here we test a ref to nothing, it is @case:nonexistent.
 Here is the reference. 
 Let me test @Stacks and  @Har77.
 
+
+
+= Why I do not use Typst now
+
++ the syntactic sugar "/" can not be banned. For mathematical documents, we use "/" to denote the quotient (group, space, etc.) and it is very common while the fraction line is not suitable for this purpose. 
++ the indent after a display math is not supported, which is very annoying for a mathematical document.
++ it can't define a new counter for the theorem-like environments
++ it has no support for the symbol "\\varprolim".
+
+
+
 #bibliography("ref.bib", style: "ieee")
