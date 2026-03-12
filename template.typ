@@ -1,8 +1,11 @@
 #import "./note_for_myself.typ": *
+#import "./my_macros.typ": *
 
 #show: article_settings.with(
   section_level: "chapter",
+
   heading_number_mode: "level3-last",
+
   title: "title",
   author: "The author",
   date: datetime.today().display(),
@@ -10,7 +13,7 @@
   version: "1.0.0",
 )
 
-
+#show: no-ref
 // = title
 // #outline()
 
@@ -110,3 +113,33 @@ Test the ref to the slogan, it is @slogan:math.
 
 
 Here we test the ref to the case, it is @case:trivial-quotient 2.
+
+Here we test a ref to nothing, it is @case:nonexistent.
+
+#theorem[
+  In this theorem, we draw the Castersion diagram of the fiber product of two morphisms $f: X -> Z$ and $g: Y -> Z$ in the category of schemes. The diagram is as follows:
+  #align(center)[
+    #commutative-diagram(
+      node((1,1),$W$),
+      node((2,2), $X times_Z Y$),
+      node((3,2), $Y$),
+      node((2,3), $X$),
+      node((3,3), $X$),
+      
+      arr((1,1),(2,2), $exists !$),
+      arr((2,2),(3,2), $p_2$, label-pos: right),
+      arr((2,2),(2,3), $p_1$,),
+      arr((3,2),(3,3), $g$),
+      arr((2,3),(3,3), $f$),
+      arr((1,1),(2,3), $h$, label-offset: (0, 2pt)),
+      arr((1,1),(3,2), $k$, label-offset: (0, -2pt)),
+    )
+  ]
+  Then I can say that $f:X to Y$.
+]
+
+
+Here is the reference. 
+Let me test @Stacks and  @Har77.
+
+#bibliography("ref.bib", style: "ieee")

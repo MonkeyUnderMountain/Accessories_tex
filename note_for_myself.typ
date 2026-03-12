@@ -168,6 +168,11 @@
 
 
 
+// ---------------------------------------------------------------------------------
+// The package `commute` is used to draw commutative diagrams, 
+//-----------------------------------------------------------------------------------
+#import "@preview/commute:0.3.0": node, arr, commutative-diagram
+
 
 
 
@@ -197,6 +202,84 @@
 
 
 
+//------------------------------------------------------------------------------
+//function to draw title page
+//------------------------------------------------------------------------------
+
+#let draw_title_page(title,figure,setence) = {
+
+  //title page setting
+  set page(margin: 0em)
+  set block(spacing: 0pt)
+
+  // Top band (~25%): sky blue with centered title
+  rect(width: 100%, height: 20%, fill: rgb("#94cee5"), stroke: none)[
+    #box(width: 80%, height: 100%)[
+      #place(left + horizon, dx: 5%)[
+        #text(size: 40pt, weight: 750,)[#title]
+      ]
+    ]
+  ]
+
+  // Middle band (~60%): light yellow-gray with image placeholder
+  rect(width: 100%, height: 72%, stroke: none, fill: rgb("#e6e1c6"))[
+    // central placeholder box for an image
+    #place(center + bottom, dy: -5%)[
+      #box(width: 60%, height: 60%, fill: rgb("#ffffff"), radius: 8pt, clip: true)[
+        #if figure != ""{
+          place(center + bottom)[
+            #image(figure, width: 100%, height: 100%, fit: "contain")]
+        } else {
+          place(center + horizon)[
+            #stack(
+              spacing: 0.5cm,
+              text(size: 18pt, fill: rgb("#999999"))[No image provided],
+              text(size: 10pt, fill: red)[Warning: image path is empty or missing. Set `title_figure` to a valid path.]
+            )
+          ]
+        }
+      ]
+    ]
+
+    // right-bottom sentence within the middle band
+    #place(right + bottom, dy: -3%, dx: -3%, float: true, scope: "parent")[
+        #box(width: 70%)[
+          #text(size: 12pt)[#setence]
+        ]
+    ]
+  ]
+
+  // Bottom band (~15%): dark gray
+  rect(width: 100%, height: 8%, fill: rgb("#a9a9a9"), stroke: none)[]
+
+  // recover the page style for the rest of the document
+  pagebreak()
+  set page(margin: 36pt)
+} 
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------
+// for bib management, to be completed in the future
+
+
+
+#let no-ref(it) = {
+  show ref: _ => [[?]]
+  it
+}
+
+
+
+
+
+
+
 
 
 //---------------------------------------------------------------------------------
@@ -212,6 +295,9 @@
   date: datetime.today().display(),
   author_page: none,
   version: none,
+  title_picture: "",
+  title_setence: "here is the sentence on the title page, you can set it with `title_setence` parameter.",
+
   page_paper: "a4",
   page_margin: 36pt,
   font: none,
@@ -238,10 +324,27 @@
 
 
 
+
+
+  //draw the title page if `make_title` is true and a title is provided
+  if make_title and title != none {
+    draw_title_page(title, title_picture, title_setence)
+  }
+
+
+
+
+
+
+
+
   //-- Set up page layout, document metadata, and text styling based on the provided parameters.
   set page(
     paper: page_paper,
-    margin: page_margin,
+    margin: (top: page_margin, bottom: page_margin+ 0.5 * font_size, left: page_margin, right: page_margin),
+    footer: context { 
+      align(center + top, counter(page).display("1"))
+    },
   )
   set document(title: title, author: author)
   set text(size: font_size)
@@ -249,6 +352,12 @@
     set text(font: font)
   }
   set par(justify: true, first-line-indent: 2em)
+
+
+
+
+
+
 
 
 
@@ -304,6 +413,17 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
   // Distinguish hyperlinks by semantic kind: refs, citations, and raw links.
   show ref: it => {
     let el = it.element
@@ -345,8 +465,37 @@
       text(fill: c)[#it]
     }
   }
+  // remove thm numbering from refs to steps and cases, since they are often used inside proofs and don't need to be numbered globally.
+  show ref: it => {
+    if it.element == none or it.element.func() != figure or it.element.kind != "thmenv" {
+      return it
+    }
 
+    let supplement = it.element.supplement
+    if it.citation.supplement != none {
+      supplement = it.citation.supplement
+    }
+
+    let loc = it.element.location()
+    let thms = query(selector(<meta:thmenvcounter>).after(loc))
+    let number = thmcounters.at(thms.first().location()).at("latest")
+
+    if it.element.numbering == none or it.element.numbering == no_num {
+      return link(it.target, [#supplement])
+    }
+
+    link(it.target, [#supplement~#numbering(it.element.numbering, ..number)])
+  }
+  //
   
+
+
+
+
+
+
+
+
 
 
   //-- Conditionally render the title section if a title is provided, including author metadata as a footnote.
@@ -369,12 +518,8 @@
 
 
 
-
-
-
-  // Set default math font with fallbacks, ensuring good coverage for various symbols and characters.
+  // Set default fonts for the document, with better styling for math environments.
   set text(font: "New Computer Modern")
-
   show math.equation: set text(font: (
     // 1. force double-struck (bb) letters, symbols, and digits to Libertinus Math
     // (
@@ -392,33 +537,13 @@
 
 
 
+  // make the / symbol become the original slash in math mode, instead of a fraction formula. This is useful when you want to write something like "G/H" without it being interpreted as a fraction.
+  show math.frac: it => [#it.num #sym.slash #it.denom]
 
 
 
 
 
-
-  // remove thm numbering from refs to steps and cases, since they are often used inside proofs and don't need to be numbered globally.
-  show ref: it => {
-    if it.element == none or it.element.func() != figure or it.element.kind != "thmenv" {
-      return it
-    }
-
-    let supplement = it.element.supplement
-    if it.citation.supplement != none {
-      supplement = it.citation.supplement
-    }
-
-    let loc = it.element.location()
-    let thms = query(selector(<meta:thmenvcounter>).after(loc))
-    let number = thmcounters.at(thms.first().location()).at("latest")
-
-    if it.element.numbering == none or it.element.numbering == no_num {
-      return link(it.target, [#supplement])
-    }
-
-    link(it.target, [#supplement~#numbering(it.element.numbering, ..number)])
-  }
 
 
 
