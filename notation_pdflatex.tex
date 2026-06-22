@@ -1,3 +1,9 @@
+\newcommand{\caloperatorname}[1]{\mathop{\mathcal{#1}}\nolimits}
+\newcommand{\frakoperatorname}[1]{\mathop{\mathfrak{#1}}\nolimits}
+
+
+
+
 %一些常用的宏定义
 \newcommand{\kk}{{\mathbf{k}}}
 \newcommand{\kkk}{{\mathbbm{k}}}
@@ -6,38 +12,120 @@
 \newcommand{\rkk}{{\kappa}} % residue field
 \newcommand{\fkk}{{\mathscr{K}}} % fraction field
 
-
-% for category theory
-\newcommand{\Set}{\mathbf{Set}}
-\newcommand{\Var}{\mathbf{Var}}
-\newcommand{\Sch}{\mathbf{Sch}}
-\newcommand{\Alg}{\mathbf{Alg}}
-\newcommand{\Ring}{\mathbf{Ring}}
-\newcommand{\Mod}{\mathbf{Mod}}
-\newcommand{\TopMod}{\mathbf{TopMod}}
-\newcommand{\Grp}{\mathbf{Grp}}
-\newcommand{\Ab}{\mathbf{Ab}}
-\newcommand{\Top}{\mathbf{Top}}
-\newcommand{\Cat}{\mathbf{Cat}}
-\newcommand{\AlgSp}{\mathbf{AlgSp}}
-\newcommand{\Obj}{\operatorname{Obj}}
-
+\newcommand{\im}{\sqrt{-1}} % imaginary unit
+\newcommand{\Real}{\operatorname{Re}}
 
 \newcommand{\ten}{\otimes}
-\newcommand{\ratmap}{\dasharrow}
+
 \newcommand{\injmap}{\hookrightarrow}
 \newcommand{\surjmap}{\twoheadrightarrow}
+\newcommand{\congmap}{\xrightarrow{\sim}}
+\newcommand{\isomap}{\xrightarrow{\sim}}
 
 \newcommand{\invlim}{\varprojlim}
 \newcommand{\dirlim}{\varinjlim}
 
 \newcommand{\id}{{\operatorname{id}}}
 
-\newcommand{\Frac}{\operatorname{Frac}}
-\newcommand{\Der}{\operatorname{Der}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\Length}{\operatorname{Length}}
+\newcommand{\length}{\operatorname{length}}
+
+\newcommand{\disc}{\operatorname{disc}}
+
+\newcommand{\gr}{\operatorname{gr}}
+
+\newcommand{\pr}{\operatorname{pr}}
+
+\newcommand{\Frob}{\operatorname{Frob}}
+\newcommand{\Gal}{\operatorname{Gal}}
+
+\newcommand{\acts}{\curvearrowright}
+
+\newcommand{\Nm}{\operatorname{Nm}}
+
+
+% for algebraic geometry
 \newcommand{\Spec}{\operatorname{Spec}}
 \newcommand{\Proj}{\operatorname{Proj}}
 \newcommand{\mSpec}{\operatorname{mSpec}}
+
+\newcommand{\calQuot}{\caloperatorname{Quot}}
+\newcommand{\frakQuot}{\frakoperatorname{Quot}}
+\newcommand{\Quot}{\operatorname{Quot}}
+\newcommand{\Hilb}{\operatorname{Hilb}}
+\newcommand{\calHilb}{\caloperatorname{Hilb}}
+\newcommand{\frakHilb}{\frakoperatorname{Hilb}}
+\newcommand{\Grass}{\operatorname{Grass}}
+\newcommand{\calGrass}{\caloperatorname{Grass}}
+\newcommand{\frakGrass}{\frakoperatorname{Grass}}
+\newcommand{\frakMor}{\frakoperatorname{Mor}}
+
+
+\newcommand{\calHom}{\caloperatorname{Hom}}
+\newcommand{\calExt}{\caloperatorname{Ext}}
+\newcommand{\calProj}{\caloperatorname{Proj}}
+\newcommand{\calSpec}{\caloperatorname{Spec}}
+
+\newcommand{\sing}{{\mathrm{sing}}}
+\newcommand{\et}{{\text{\'et}}}
+\newcommand{\zar}{{\mathrm{zar}}}
+\newcommand{\nor}{{\mathrm{nor}}}
+
+\newcommand{\CH}{\operatorname{CH}}
+
+\newcommand{\ch}{\operatorname{ch}}
+\newcommand{\td}{\operatorname{td}}
+
+
+% for category theory and homological algebra
+\newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Var}{\mathbf{Var}}
+\newcommand{\Sch}{\mathbf{Sch}}
+\newcommand{\sch}{\mathbf{sch}}
+\newcommand{\Av}{\mathbf{Av}}
+\newcommand{\Alg}{\mathbf{Alg}}
+\newcommand{\Ring}{\mathbf{Ring}}
+\newcommand{\Mod}{\mathbf{Mod}}
+\newcommand{\module}{\mathbf{mod}}
+\newcommand{\TopMod}{\mathbf{TopMod}}
+\newcommand{\Banmod}{\mathbf{Banmod}}
+\newcommand{\Vect}{\mathbf{Vect}}
+\newcommand{\vect}{\mathbf{vect}}
+\newcommand{\Grp}{\mathbf{Grp}}
+\newcommand{\Grpd}{\mathbf{Grpd}}
+\newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\Top}{\mathbf{Top}}
+\newcommand{\Open}{\mathbf{Open}}
+\newcommand{\Sh}{\mathbf{Sh}}
+\newcommand{\PSh}{\mathbf{PSh}}
+\newcommand{\Coh}{\mathbf{Coh}}
+\newcommand{\QCoh}{\mathbf{QCoh}}
+\newcommand{\Cat}{\mathbf{Cat}}
+\newcommand{\AlgSp}{\mathbf{AlgSp}}
+\newcommand{\AlgGrp}{\mathbf{AlgGrp}}
+
+\newcommand{\Obj}{\operatorname{Obj}}
+\newcommand{\Fun}{\operatorname{Fun}}
+\newcommand{\Mor}{\operatorname{Mor}}
+
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\res}{\operatorname{res}}
+
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Tor}{\operatorname{Tor}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Eq}{\operatorname{Eq}}
+
+\newcommand{\cohdim}{\operatorname{coh.dim}}
+\newcommand{\hldim}{\operatorname{hl.dim}}
+\newcommand{\projdim}{\operatorname{proj.dim}}
+\newcommand{\injdim}{\operatorname{inj.dim}}
+
+
+
+% for commutative algebra
 \newcommand{\depth}{\operatorname{depth}}
 \newcommand{\idealht}{\operatorname{ht}}
 \newcommand{\codim}{\operatorname{codim}}
@@ -45,42 +133,51 @@
 \newcommand{\trdeg}{\operatorname{trdeg}}
 \newcommand{\Ass}{\operatorname{Ass}}
 \newcommand{\Ann}{\operatorname{Ann}}
-\newcommand{\Ext}{\operatorname{Ext}}
-\newcommand{\Tor}{\operatorname{Tor}}
-\newcommand{\Hom}{\operatorname{Hom}}
-\newcommand{\Eq}{\operatorname{Eq}}
-\newcommand{\End}{\operatorname{End}}
-\newcommand{\Mor}{\operatorname{Mor}}
+\newcommand{\Der}{\operatorname{Der}}
+
+\newcommand{\Frac}{\operatorname{Frac}}
+
 \newcommand{\Mult}{\operatorname{Mult}}
-\newcommand{\Image}{\operatorname{Im}}
-\newcommand{\Ker}{\operatorname{Ker}}
-\newcommand{\coker}{\operatorname{coker}}
-\newcommand{\rank}{\operatorname{rank}}
-\newcommand{\diag}{\operatorname{diag}}
-\newcommand{\cohdim}{\operatorname{coh.dim}}
-\newcommand{\hldim}{\operatorname{hl.dim}}
-\newcommand{\projdim}{\operatorname{proj.dim}}
-\newcommand{\injdim}{\operatorname{inj.dim}}
+
 \newcommand{\rad}{\operatorname{rad}}
 \newcommand{\nil}{\operatorname{nil}}
 \newcommand{\characteristic}{\operatorname{char}}
+
+
+
+% for birational geometry
 \newcommand{\Pic}{\operatorname{Pic}}
 \newcommand{\NS}{\operatorname{NS}}
 \newcommand{\Exc}{\operatorname{Exc}}
 \newcommand{\Sing}{\operatorname{Sing}}
 \newcommand{\Bl}{\operatorname{Bl}}
 \newcommand{\Reg}{\operatorname{Reg}}
-\newcommand{\Tr}{\operatorname{Tr}}
 \newcommand{\Psef}{\operatorname{Psef}}
 \newcommand{\Nef}{\operatorname{Nef}}
 \newcommand{\Amp}{\operatorname{Amp}}
 \newcommand{\Bigcone}{\operatorname{Big}}
-\newcommand{\Frob}{\operatorname{Frob}}
 \newcommand{\Bs}{\operatorname{Bs}}
 \newcommand{\Stab}{\operatorname{Stab}}
 \newcommand{\Cone}{\operatorname{Cone}}
-\newcommand{\NE}{\operatorname{NE}}
+\newcommand{\Div}{\operatorname{Div}}
+\newcommand{\WDiv}{\operatorname{WDiv}}
+\newcommand{\CaDiv}{\operatorname{CaDiv}}
+\newcommand{\divisor}{\operatorname{div}}
+\newcommand{\Cl}{\operatorname{Cl}}
+\newcommand{\CaCl}{\operatorname{CaCl}}
+\newcommand{\WCl}{\operatorname{WCl}}
+\newcommand{\ratmap}{\dashrightarrow}
 
+\newcommand{\Bir}{\operatorname{Bir}}
+
+\newcommand{\Bpf}{\operatorname{Bpf}}
+\newcommand{\BPF}{\operatorname{BPF}}
+\newcommand{\Mov}{\operatorname{Mov}}
+\newcommand{\Nci}{\operatorname{Nci}}
+
+
+
+% for Lie groups, Lie algebras and linear algebra
 \newcommand{\GL}{\operatorname{GL}}
 \newcommand{\PGL}{\operatorname{PGL}}
 \newcommand{\SL}{\operatorname{SL}}
@@ -90,27 +187,78 @@
 \newcommand{\Sp}{\operatorname{Sp}}
 \newcommand{\SU}{\operatorname{SU}}
 
+\newcommand{\Gr}{\operatorname{Gr}}
+
 \newcommand{\gl}{{\mathfrak{gl}}}
 \newcommand{\so}{{\mathfrak{so}}}
 \newcommand{\su}{{\mathfrak{su}}}
 
 \newcommand{\ad}{\operatorname{ad}}
 \newcommand{\Ad}{\operatorname{Ad}}
+\newcommand{\Lie}{\operatorname{Lie}}
 \newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Span}{\operatorname{Span}}
 
-\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\Image}{\operatorname{Im}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Ker}{\operatorname{Ker}}
+\renewcommand{\ker}{\operatorname{ker}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\ord}{\operatorname{ord}}
+\newcommand{\rank}{\operatorname{rank}}
+\renewcommand{\deg}{\operatorname{deg}}
+\renewcommand{\det}{\operatorname{det}}
+\renewcommand{\dim}{\operatorname{dim}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Tr}{\operatorname{Tr}}
+
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Sym}{\operatorname{Sym}}
+
+\newcommand{\MixDet}{\operatorname{MixDet}}
 
 
-\newcommand{\calHom}{{\mathcal{H}om}}
-\newcommand{\calExt}{{\mathcal{E}xt}}
-\newcommand{\calProj}{{\mathcal{P}roj}}
-\newcommand{\calSpec}{{\mathcal{S}pec}}
 
 
-\newcommand{\acts}{\mathrel{\rotatebox[origin=c]{-90}{$\circlearrowright$}}}
-\newcommand{\racts}{\mathrel{\rotatebox[origin=c]{90}{$\circlearrowleft$}}}
-\newcommand{\dacts}{\mathrel{\rotatebox[origin=c]{0}{$\circlearrowright$}}}
-\newcommand{\uacts}{\mathrel{\rotatebox[origin=c]{180}{$\circlearrowright$}}}
+% analysis on cones
+\newcommand{\Sep}{\operatorname{Sep}}
+
+
+
+
+% for differential geometry and topology
+\newcommand{\sm}{\mathrm{sm}}
+\newcommand{\dR}{\mathrm{dR}}
+\newcommand{\diff}{\mathrm{diff}}
+\newcommand{\hol}{\mathrm{hol}}
+
+\newcommand{\Hol}{\operatorname{Hol}}
+\newcommand{\Mer}{\operatorname{Mer}}
+
+
+
+
+% for Berkovich spaces
+\newcommand{\Qnil}{\operatorname{Qnil}}
+\newcommand{\Red}{\operatorname{Red}}
+\newcommand{\cten}{\widehat{\otimes}}
+\newcommand{\an}{\mathrm{an}}
+\newcommand{\Int}{\operatorname{Int}}
+
+
+
+
+% Arakelov geometry
+\newcommand{\adeg}{\operatorname{\widehat{deg}}}
+\newcommand{\aPic}{\operatorname{\widehat{Pic}}}
+\newcommand{\aDiv}{\operatorname{\widehat{Div}}}
+\newcommand{\adiv}{\operatorname{\widehat{divisor}}}
+\newcommand{\aCaDiv}{\operatorname{\widehat{CaDiv}}}
+\newcommand{\aWDiv}{\operatorname{\widehat{WDiv}}}
+\newcommand{\aCl}{\operatorname{\widehat{Cl}}}
+\newcommand{\aCaCl}{\operatorname{\widehat{CaCl}}}
+
 
 
 % 单一字母in mathbb mathcal mathsf mathrm mathfrak mathscr symbf symrm symup
